@@ -8,11 +8,16 @@ import "google/api/annotations.proto";
 service CommentAction {
     rpc CommentAction(CommentActionRequest) returns (CommentActionResponse) {
         option (google.api.http) = {
-            post: "/v1/catalog/service/comment"
+            post: "/v1/catalog/service/bawling-minidouyin-comment-action-grpc"
             body: "*"
         };
     }
-    rpc CommentList(CommentListRequest) returns (CommentListResponse) {}
+    rpc CommentList(CommentListRequest) returns (CommentListResponse) {
+        option (google.api.http) = {
+            post: "/v1/catalog/service/bawling-minidouyin-comment-list-grpc"
+            body: "*"
+        };
+    }
 }
 
 message Comment {
